@@ -9,9 +9,17 @@ class CoinTrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.blue.shade400,
+        scaffoldBackgroundColor: Colors.white,
+      ),
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: Icon(Icons.money),
+          titleSpacing: -10.0,
+          title: Text("Coin Tracker"),
+        ),
         body: CoinTracker(),
       ),
     );
