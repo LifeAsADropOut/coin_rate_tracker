@@ -1,3 +1,4 @@
+import 'package:coin_rate_tracker/utils.dart';
 import 'package:flutter/material.dart';
 
 class CoinTracker extends StatefulWidget {
@@ -18,7 +19,26 @@ class _CoinTrackerState extends State<CoinTracker> {
           Expanded(
             flex: 4,
             child: Column(
-              children: [],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 18, 18, 0),
+                  child: Card(
+                    elevation: 5.0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 15.0, horizontal: 10.0),
+                      child: Text(
+                        "1 BTC = ? USD",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      ),
+                    ),
+                    color: Colors.lightBlueAccent,
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -34,7 +54,7 @@ class _CoinTrackerState extends State<CoinTracker> {
                       Icons.arrow_upward,
                       color: Colors.white,
                     ),
-                    items: <String>["INR", "USD", "JPY", "CAD", "CNY"]
+                    items: CURRENCY_LIST
                         .map((e) => DropdownMenuItem(child: Text(e), value: e))
                         .toList()),
               ),

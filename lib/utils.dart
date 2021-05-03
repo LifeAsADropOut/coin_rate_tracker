@@ -5,3 +5,5 @@ Uri getURI() => Uri.parse(
     );
 
 // header "X-CoinAPI-Key", "73034021-THIS-IS-SAMPLE-KEY":
+
+const List<String> CURRENCY_LIST = <String>["INR", "USD", "JPY", "CAD", "CNY"];
